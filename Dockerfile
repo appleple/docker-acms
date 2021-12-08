@@ -1,4 +1,4 @@
-FROM php:8.0.13-apache
+FROM php:8.1-apache
 
 # extension
 RUN apt-get update \
