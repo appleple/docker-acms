@@ -8,6 +8,10 @@ RUN apt-get update \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng-dev \
+        libicu-dev \
+        libzip-dev \
+        libonig-dev \
+        libssl-dev \
         jpegoptim \
         optipng \
         gifsicle \
@@ -15,18 +19,19 @@ RUN apt-get update \
         git-core \
         build-essential \
         openssl \
-        libssl-dev \
         python2.7 \
         zip \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+        unzip \
+    && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) zip \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install gettext \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
+    && docker-php-ext-install opcache \
     && docker-php-ext-enable mysqli \
-    && pecl install xdebug-2.6.0beta1 \
+    && pecl install xdebug \
         imagick \
         apcu \
     && docker-php-ext-enable xdebug \
