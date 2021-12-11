@@ -34,9 +34,11 @@ RUN apt-get update \
     && pecl install xdebug \
         imagick \
         apcu \
+        redis \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
+    && docker-php-ext-enable redis \
     && ln -s /usr/bin/python2.7 /usr/bin/python
 
 # composer
