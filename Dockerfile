@@ -31,14 +31,15 @@ RUN apt-get update \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
     && docker-php-ext-enable mysqli \
-    && pecl install xdebug \
+    && pecl install imagick \
         imagick \
         apcu \
         redis \
-    && docker-php-ext-enable xdebug \
+        # xdebug \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis \
+    # && docker-php-ext-enable xdebug \
     && ln -s /usr/bin/python2.7 /usr/bin/python
 
 # composer
