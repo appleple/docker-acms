@@ -31,11 +31,9 @@ RUN apt-get update \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
     && docker-php-ext-enable mysqli \
-    && pecl install xdebug \
-        imagick \
+    && pecl install imagick \
         apcu \
         redis \
-    && docker-php-ext-enable xdebug \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis \
