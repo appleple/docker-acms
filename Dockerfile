@@ -37,7 +37,11 @@ RUN apt-get update \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis \
-    && ln -s /usr/bin/python2.7 /usr/bin/python
+    && ln -s /usr/bin/python2.7 /usr/bin/python \
+    && a2enmod headers \
+    && a2enmod mime \
+    && a2enmod expires \
+    && a2enmod deflate
 
 # composer
 RUN curl -S https://getcomposer.org/installer | php \
