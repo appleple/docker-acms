@@ -58,7 +58,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.s
     && nvm install v14.16.0 \
     && nvm use v14.16.0 \
     && nvm alias default v14.16.0 \
-    && npm install -g npm
+    && npm install -g npm@7.24.0
 
 # php.ini
 COPY config/php.ini /usr/local/etc/php/
