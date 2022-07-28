@@ -30,8 +30,8 @@ RUN apt-get update \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
+    && docker-php-ext-install bcmath \
     && docker-php-ext-enable mysqli \
-    && docker-php-ext-enable bcmath \
     && pecl install imagick \
         imagick \
         apcu \
