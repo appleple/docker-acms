@@ -56,9 +56,9 @@ RUN curl -S https://getcomposer.org/installer | php \
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \
     && export NVM_DIR="$HOME/.nvm" \
     && . $NVM_DIR/nvm.sh \
-    && nvm install v14.16.0 \
-    && nvm use v14.16.0 \
-    && nvm alias default v14.16.0 \
+    && nvm install v14.17.0 \
+    && nvm use v14.17.0 \
+    && nvm alias default v14.17.0 \
     && npm install -g npm@7.24.0
 
 # php.ini
