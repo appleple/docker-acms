@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM --platform=linux/amd64 php:8.1-apache
 
 # extension
 RUN apt-get update \
