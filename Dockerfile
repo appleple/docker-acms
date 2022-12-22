@@ -61,6 +61,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.s
 COPY config/php.ini /usr/local/etc/php/
 
 # apache
+RUN echo "Mutex posixsem" >> /etc/apache2/apache2.conf
 RUN a2enmod rewrite
 RUN a2enmod ssl
 
