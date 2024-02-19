@@ -35,9 +35,11 @@ RUN apt-get update \
     && pecl install imagick \
         apcu \
         redis \
+        xdebug \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis \
+    && docker-php-ext-enable xdebug \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && a2enmod headers \
     && a2enmod mime \
