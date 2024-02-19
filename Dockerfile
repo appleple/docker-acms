@@ -19,7 +19,7 @@ RUN apt-get update \
         git-core \
         build-essential \
         openssl \
-        python2.7 \
+        python3 \
         zip \
         unzip \
     && docker-php-ext-configure gd --with-jpeg \
@@ -30,6 +30,7 @@ RUN apt-get update \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
+    && docker-php-ext-install bcmath \
     && docker-php-ext-enable mysqli \
     && pecl install imagick \
         apcu \
@@ -37,7 +38,7 @@ RUN apt-get update \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis \
-    && ln -s /usr/bin/python2.7 /usr/bin/python \
+    && ln -s /usr/bin/python3 /usr/bin/python \
     && a2enmod headers \
     && a2enmod mime \
     && a2enmod expires \
