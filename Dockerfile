@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.3-apache
 
 # extension
 RUN apt-get update \
@@ -32,10 +32,8 @@ RUN apt-get update \
     && docker-php-ext-install opcache \
     && docker-php-ext-install bcmath \
     && docker-php-ext-enable mysqli \
-    && pecl install imagick \
-        apcu \
+    && pecl install apcu \
         redis \
-    && docker-php-ext-enable imagick \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable redis \
     && ln -s /usr/bin/python3 /usr/bin/python \
